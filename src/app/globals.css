@@ -1,0 +1,105 @@
+/* Importações do Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variáveis de tema claro */
+:root {
+  --background: #000;
+  --foreground: #000000;
+}
+
+/* Variáveis para tema escuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000;
+    --foreground: #ededed;
+  }
+}
+
+/* Estilização global do body */
+body {
+  @apply text-base leading-relaxed; /* Adiciona utilidades Tailwind */
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: "nasalization"; /* Aplica a fonte nasalization */
+}
+button.termos-de-uso {
+  color: #DAFD00; /* Cor amarela */
+  text-decoration: underline; /* Subtítulo destacado */
+  background-color: transparent; /* Fundo transparente */
+  border: none; /* Remove borda padrão de botões */
+  padding: 0; /* Remove padding padrão de botões */
+  font-size: 0.875rem; /* Ajusta tamanho do texto */
+  cursor: pointer; /* Mostra o cursor como clicável */
+  transition: color 0.3s ease, text-decoration-color 0.3s ease; /* Animações */
+}
+
+button.termos-de-uso:hover {
+  color: #FFFFFF; /* Muda para branco ao passar o mouse */
+  text-decoration-color: #DAFD00; /* Cor da underline permanece amarela */
+  text-decoration-thickness: 2px; /* Espessura maior para destaque */
+}
+
+@font-face {
+  font-family: "nasalization";
+  src: url("../../public/nasalization-rg.otf");
+}
+
+.nasalization {
+  font-family: "nasalization", sans-serif; /* Aplica a fonte nasalization */
+}
+
+/* Estilização da seção principal */
+.containerhome {
+  @apply flex items-center justify-between flex-wrap py-10 px-5 gap-6;
+}
+
+.imagem-left {
+  @apply max-w-[200px] flex-shrink-0; /* Imagem com largura fixa */
+}
+
+.boxinit {
+  @apply flex-1 text-left; /* Alinha o conteúdo à esquerda */
+}
+
+h2 {
+  @apply text-2xl font-semibold mb-4 nasalization; /* Aplica a fonte nasalization ao título */
+}
+
+#buttoninit {
+  @apply inline-block px-6 py-3 bg-yellow-400 text-black rounded-lg hover:bg-yellow-300 transition;
+}
+
+/* Responsividade */
+@media (max-width: 360px) {
+  .containerhome {
+    @apply flex-col text-center; /* Alinha conteúdo em coluna */
+  }
+
+  .imagem-left {
+    @apply mx-auto mb-6; /* Centraliza a imagem */
+  }
+
+  .boxinit {
+    @apply text-center; /* Centraliza o texto e botão */
+  }
+
+  h2 {
+    @apply text-xl; /* Reduz o tamanho do título */
+  }
+
+  #buttoninit {
+    @apply w-full text-lg;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    @apply text-lg; /* Reduz ainda mais o título */
+  }
+
+  #buttoninit {
+    @apply text-base;
+  }
+}

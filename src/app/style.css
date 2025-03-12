@@ -1,0 +1,183 @@
+/* Container geral ajustado para a tela toda */
+.containerhome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 0;
+    background-color: white;
+    position: relative;
+}
+
+/* Imagem à esquerda */
+.containerhome img {
+    max-width: 38vw;
+    height: auto;
+    object-fit: contain;
+    z-index: 0;
+}
+
+/* Box de conteúdo */
+.boxinit {
+    max-width: 50%;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+/* Estilos do título (h2) */
+h2 {
+    font-size: 42px;
+    color: black;
+    line-height: 1.4;
+}
+
+/* Estilos do botão */
+#buttoninit {
+    background: linear-gradient(90deg, #fff, #DAFD00, #fff, #DAFD00);
+    background-size: 400% 400%;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    height: auto;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    animation: gradientButton 2s ease infinite;
+    font-family: "nasalization";
+}
+
+/* Animação do botão */
+@keyframes gradientButton {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 50% 100%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 860px) {
+    h2 {
+        font-size: 10px;
+        color: black;
+    }
+
+    #buttoninit {
+        font-size: 8px !important;
+        padding: 4px 6px !important;
+        width: 100px !important;
+        /* height: 28px !important; */
+    }
+
+    #saibamaispersona{
+        font-size: 8px !important;
+        padding: 4px 6px !important;
+        width: 100px !important;
+        margin-bottom: 20px !important;
+        /* height: 28px !important; */
+    }
+}
+
+/* Responsividade para telas 360px */
+@media (max-width: 360px) {
+    .containerhome {
+        display: flex; /* Garante que os itens continuem lado a lado */
+        flex-direction: row; /* Garante o alinhamento horizontal */
+        justify-content: space-between; /* Espaçamento entre os itens */
+        align-items: center; /* Alinha os itens ao centro */
+    }
+
+    .containerhome img {
+        max-width: 40vw; /* Ajusta a largura da imagem */
+        height: auto;
+        margin-left: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .boxinit {
+        max-width: 100%; /* Ajusta o tamanho da caixa de conteúdo */
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 8px; /* Ajuste do tamanho do título */
+    }
+
+    #buttoninit {
+        width: 70% !important; /* Faz o botão ocupar 80% da largura disponível */
+        font-size: 7px !important; /* Ajusta o tamanho da fonte */
+        padding: 2px 4px !important; 
+        white-space: nowrap !important; /* Impede o botão de quebrar o texto */
+        overflow: hidden !important; /* Garante que o texto não ultrapasse os limites do botão */
+        align-items: center !important;
+    }
+
+    #saibamaispersona{
+        font-size: 8px !important;
+        padding: 6px 8px !important;
+        width: 110px !important;
+        margin-bottom: 20px !important;
+        /* height: 28px !important; */
+    }
+}
+
+/* Botão de Alternância */
+.toggle-button {
+    display: inline-flex;
+    border: 1px solid #000;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: #fff;
+    font-family: "nasalization";
+}
+
+.toggle-button input[type="radio"] {
+    display: none;
+}
+
+.toggle-button label {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    color: #000;
+    background-color: #fff;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.toggle-button label:first-of-type {
+    border-right: 1px solid #ccc;
+}
+
+.toggle-button input[type="radio"]:checked + label {
+    background-color: #DAFD00;
+    color: #000;
+}
+
+.toggle-button label span {
+    font-size: 12px;
+    color: #555;
+    display: block;
+    margin-top: 4px;
+}
+
+.toggle-button input[type="radio"]:checked + label span {
+    color: #000;
+}
